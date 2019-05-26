@@ -1,0 +1,240 @@
+* {
+  margin:0;
+  padding:0;
+}
+main {
+  padding: 32px;
+  padding-left: 48px;
+}
+html {
+  height: 100%;
+}
+#storebody {
+  align-items: center;
+  background-color: #eee;
+}
+body {
+  overflow: auto;
+}
+.inlagg{
+}
+.kommentarer{
+  margin-left: 15px;
+/*  display: inline-block; */
+}
+.main {
+  font-family: 'Poppins';
+  width: 600px;
+  border-radius: 56px;
+  box-shadow: 0 24px 32px 0 rgba(0,0,0,0.16);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 32px;
+  background-color: white;
+}
+.store {
+  margin-top: 56px;
+}
+h2 {
+  font-size: 56px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+h3 {
+  font-weight: 400;
+  font-size: 32px;
+}
+p {
+  margin: 0;
+}
+#nav-ul {
+  list-style: none;
+  display: flex;
+  padding: 16px;
+  background-color: teal;
+}
+#nav-ul li:nth-child(1) {
+  margin-left: 56px;
+}
+#nav-ul li:nth-child(2) {
+  margin-left: 56px;
+}
+#nav-ul button {
+  margin-left: auto;
+  padding: 8px;
+  box-shadow: 0;
+  outline: 0;
+  border: 0;
+  background-color: white;
+  color: black;
+  margin-right: 32px;
+}
+#nyttinlagg {
+  display: none;
+
+}
+#signoutbutton {
+  margin-left: auto;
+  /* display: none; */
+  padding: 8px;
+  box-shadow: 0;
+  outline: 0;
+  border: 0;
+  background-color: white;
+  color: black;
+  margin-right: 32px;
+  text-decoration: none;
+}
+#feldiv {
+  position: absolute;
+  bottom: 32px;
+  margin-left: auto;
+  margin-right: auto;
+  display: none;
+}
+#nav-ul li a {
+  color: white;
+  font-size: 18px;
+}
+.boxlist {
+  background-color: lightblue;
+  width: 300px;
+  margin-left: 16px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+.divgrid {
+
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-right: 10px;
+  overflow: auto;
+}
+#shortdesc {
+  margin-top: 8px;
+  width: 120px;
+  max-height: 50px;
+}
+.divgrid h2 {
+  font-size: 32px;
+}
+img {
+  width: 100%;
+}
+.allinfo {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+.prodinfo {
+  margin-bottom: 16px;
+}
+.köp {
+  margin-left: auto;
+  display: flex;
+  flex-direction: row;
+}
+.köp > * {
+  margin-left: 16px;
+}
+* {
+  font-family: monospace;
+}
+#köpknapp {
+  padding: 8px;
+  background: green;
+  box-shadow: 0px 4px 4px 0 rgba(0,0,0,0.18);
+  color: white;
+  text-decoration: none;
+}
+#popupwindow {
+  width: 600px;
+  height: 600px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s;
+  overflow: auto;
+}
+#blurdarken {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 200;
+  top: 0;
+  left: 0;
+  filter: blur(0px);
+  transition: all 0.2s;
+}
+#popupcontainer {
+  position: relative;
+  width: 450px;
+  height: 450px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 56px;
+  margin-bottom: 56px;
+  padding: 32px;
+  background-color: lightblue;
+  box-shadow: 0px 0px 128px 0 rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+}
+#closewindow {
+  position: absolute;
+  right: 32px;
+  top: 32px;
+  width:32px;
+  height: 32px;
+  opacity: 0.3;
+}
+button {
+  cursor: pointer;
+}
+#closewindow:hover {
+  opacity: 1;
+}
+#closewindow:before, #closewindow:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 33px;
+  width: 2px;
+  background-color: #333;
+}
+#closewindow:before {
+  transform: rotate(45deg);
+}
+#closewindow:after {
+  transform: rotate(-45deg);
+}
+.minform {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.minform > input {
+  margin-bottom: 8px;
+}
+.minform > input[type="text"], input[type="password"], input[type="email"]{
+  padding: 8px;
+  width: 200px;
+}
+.minform > button[type="submit"], input[type="button"] {
+  padding: 8px;
+  cursor: pointer;
+  background-color: green;
+  color: white;
+  border-radius: 4px;
+  box-shadow: none;
+  border: 0;
+  outline: none;
+}
