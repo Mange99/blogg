@@ -13,7 +13,11 @@ foreach($inlagg as $row) {
   <div class="inlagg">
     <h2><?php echo htmlspecialchars($row['Rubrik'])?></h2>
     <h4><?php echo htmlspecialchars($row['Text'])?></h4>
-    <button id="<?php echo $row['inlagg_pk'] ?>" type="button">Kommentera</button>
+    <form id="commentform" action="commentform.php" method="get">
+      <input type="hidden" name="inläggid" value="<?php echo $row['inlagg_pk'] ?>">
+      <input type="text" name="text" placeholder="Comment">
+      <button type="submit" name="submitcomment">Post</button>
+    </form>
     <p>kommentarer: </p>
     <?php
     //skriver ut kommentarnena
@@ -23,13 +27,18 @@ foreach($inlagg as $row) {
   }
 }
 function showKommentarer($parent, $djup, $kommentarer, $db) {
-//rekrusiv funktion för att kommentera 
+//rekrusiv funktion för att kommentera
+//if(djup = 0 svar till inlägg_pk) else svar till kommentar_pk
   foreach($kommentarer as $kommentar) {
 ?>
     <div class="kommentarer" style="margin-left: <?php echo $djup . '%'; ?>">
       <hr>
       <p><?php echo htmlspecialchars($kommentar['text']) ?></p>
-      <button id="<?php echo $kommentar['kommentar_fk'] ?>" type="button" class="kommentarknapp">Kommentera</button>
+      <form id="commentform" action="commentform.php" method="get">
+        <input type="hidden" name="kommentarid" value="<?php echo $kommentar['kommentar_pk'] ?>">
+        <input type="text" name="text" placeholder="Comment">
+        <button type="submit" name="submitcomment">Post</button>
+      </form>
     </div>
 <?php
 //kommentaren blir nya parenten
@@ -37,6 +46,7 @@ function showKommentarer($parent, $djup, $kommentarer, $db) {
   $sql = "SELECT * FROM kommentarer WHERE kommentar_fk=$parent";
   $kommentarer =  $db->query($sql);
   //kör den igen med nya kommentaren som parent
+  echo $djup;
   showKommentarer($parent, $djup + 5, $kommentarer, $db);
   }
 }
