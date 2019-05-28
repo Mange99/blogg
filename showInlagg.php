@@ -18,7 +18,6 @@ foreach($inlagg as $row) {
       <input type="text" name="text" placeholder="Comment">
       <button type="submit" name="submitcomment">Post</button>
     </form>
-    <p>kommentarer: </p>
     <?php
     //skriver ut kommentarnena
     showKommentarer($row['inlagg_pk'], $djup, $kommentarer, $db);?>
@@ -34,10 +33,11 @@ function showKommentarer($parent, $djup, $kommentarer, $db) {
     <div class="kommentarer" style="margin-left: <?php echo $djup . '%'; ?>">
       <hr>
       <p><?php echo htmlspecialchars($kommentar['text']) ?></p>
+<!-- Formen  den kör comment.php när man trcker på knappen, kommentarern får   -->
       <form id="commentform" action="commentform.php" method="get">
         <input type="hidden" name="kommentarid" value="<?php echo $kommentar['kommentar_pk'] ?>">
         <input type="text" name="text" placeholder="Comment">
-        <button type="submit" name="submitcomment">Post</button>
+        <button type="submit" name="submitcomment">Kommentera</button>
       </form>
     </div>
 <?php
@@ -46,7 +46,6 @@ function showKommentarer($parent, $djup, $kommentarer, $db) {
   $sql = "SELECT * FROM kommentarer WHERE kommentar_fk=$parent";
   $kommentarer =  $db->query($sql);
   //kör den igen med nya kommentaren som parent
-  echo $djup;
   showKommentarer($parent, $djup + 5, $kommentarer, $db);
   }
 }

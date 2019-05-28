@@ -3,7 +3,7 @@ session_start();
 require 'db_conn.php';
 function userlogin() {
   $username_clean = filter_input(INPUT_GET,'username',FILTER_SANITIZE_SPECIAL_CHARS);
-  $password = filter_input(INPUT_GET, 'password', FILETER_SANITIZE_SPECIAL_CHARS);
+  $password = filter_input(INPUT_GET, 'password', FILTER_SANITIZE_SPECIAL_CHARS);
 
   $check = dbconn();
   $login = $check->query("SELECT password, username FROM users");

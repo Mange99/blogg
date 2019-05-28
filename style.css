@@ -159,8 +159,6 @@ img {
   height: 100%;
   z-index: 1000;
   visibility: hidden;
-  opacity: 0;
-  transition: opacity 0.3s;
   overflow: auto;
 }
 #blurdarken {
